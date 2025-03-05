@@ -1,0 +1,158 @@
+.devices {
+  padding: 32px;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.devices-header {
+  margin-bottom: 32px;
+}
+
+.devices-header h1 {
+  font-size: 32px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.devices-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.device-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.device-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.device-header h2 {
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 12px;
+}
+
+.device-info {
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row span:first-child {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.info-row span:last-child {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.device-toggle {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.device-toggle.active {
+  background: var(--primary);
+  color: white;
+}
+
+.device-toggle.inactive {
+  background: rgba(67, 97, 238, 0.1);
+  color: var(--primary);
+}
+
+.device-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .devices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .devices {
+    padding: 16px;
+  }
+
+  .devices-header h1 {
+    font-size: 24px;
+  }
+
+  .devices-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .device-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .devices {
+    padding: 12px;
+  }
+
+  .device-card {
+    padding: 16px;
+  }
+
+  .device-header h2 {
+    font-size: 18px;
+  }
+
+  .info-row {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .device-toggle {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

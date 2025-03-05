@@ -1,0 +1,30 @@
+.prediction-card {
+  grid-column: span 2;
+}
+
+.prediction-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.prediction-chart {
+  height: 300px;
+}
+
+.prediction-insights {
+  padding: 20px;
+  background: rgba(75, 192, 192, 0.05);
+  border-radius: 12px;
+}
+
+.prediction-insights h3 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.prediction-insights p {
+  margin: 12px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
