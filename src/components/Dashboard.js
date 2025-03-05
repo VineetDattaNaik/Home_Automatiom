@@ -30,7 +30,7 @@ ChartJS.register(
   Filler
 );
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://ha-server-j5j7.onrender.com/api';
 
 const Dashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('week');

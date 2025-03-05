@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Devices.css';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+//const API_BASE_URL = 'https://ha-server-j5j7.onrender.com';
 
 const Devices = () => {
   const [devices, setDevices] = useState(null);
@@ -16,7 +16,7 @@ const Devices = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_BASE_URL}/devices`);
+      const response = await fetch(`https://ha-server-j5j7.onrender.com/api/devices`);
       if (!response.ok) {
         throw new Error('Failed to fetch devices');
       }
@@ -46,7 +46,7 @@ const Devices = () => {
   const toggleDevice = async (deviceName) => {
     const newStatus = devices[deviceName].status === 'active' ? 'inactive' : 'active';
     try {
-      const response = await fetch(`${API_BASE_URL}/devices/${deviceName}`, {
+      const response = await fetch(`https://ha-server-j5j7.onrender.com/api/devices/${deviceName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
