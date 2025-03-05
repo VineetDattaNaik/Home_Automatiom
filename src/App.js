@@ -6,6 +6,7 @@ import Analytics from './components/Analytics';
 import Settings from './components/Settings';
 import Sidebar from './components/Sidebar';
 import './App.css';
+import './styles/animations.css';
 
 function App() {
   return (

@@ -1,16 +1,30 @@
+/* Reset all animations and transitions */
+* {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.voice-assistant {
+  position: static !important;
+}
+
 .voice-assistant-card {
+  position: static !important;
   background: var(--card-bg);
   border-radius: 20px;
   padding: 32px;
 }
 
 .voice-content {
+  position: static !important;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .voice-button {
+  position: relative;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   border: none;
@@ -19,55 +33,42 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.voice-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(67, 97, 238, 0.2);
-}
-
-.voice-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.voice-button.listening {
-  animation: pulse 1.5s infinite;
-}
-
-.transcript, .response {
+.transcript {
+  position: static !important;
+  margin-top: 20px;
+  padding: 16px;
   background: rgba(67, 97, 238, 0.05);
-  padding: 20px;
   border-radius: 12px;
 }
 
-.transcript h3, .response h3 {
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 600;
+.response {
+  position: static !important;
+  margin-top: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.transcript p, .response p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+/* Remove all hover effects */
+.voice-button:hover,
+.transcript:hover,
+.response:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-.loading {
-  text-align: center;
-  color: var(--text-secondary);
-  padding: 20px;
-  animation: fadeIn 0.3s ease-out;
-}
-
+/* Remove all animations */
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0%, 50%, 100% { transform: none !important; }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from, to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from, to { transform: none !important; }
 }
