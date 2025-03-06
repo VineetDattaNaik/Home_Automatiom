@@ -2,6 +2,8 @@
 
 A modern React-based dashboard for monitoring and controlling your smart home devices. Track energy usage, manage appliances, and automate your home environment with ease.
 
+🌐 **Live Demo:** [https://smarthomeautomation1.netlify.app/](https://smarthomeautomation1.netlify.app/)
+
 ## Features
 
 - Real-time energy consumption monitoring
